@@ -1,0 +1,10 @@
+package ud3.tarea2;
+
+public class Ej4 {
+
+	public static void main(String[] args) {
+		//Diseñar un programa que pida una frase al usuario, e indique si el carácter de la posición central es o no un espacio
+
+	}
+
+}
