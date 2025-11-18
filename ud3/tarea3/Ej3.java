@@ -40,7 +40,7 @@ public class Ej3 {
 		System.out.println("numeros positivos introducidos= "+contP);
 		System.out.println("media positivos= "+mediaP);
 		System.out.println("numeros negativos introducidos= "+contN);
-		System.out.println("media positivos= "+mediaN);
+		System.out.println("media negativos= "+mediaN);
 		System.out.println("ceros introducidos= "+contC);
 
 
@@ -48,3 +48,4 @@ public class Ej3 {
 	}
 
 }
+
