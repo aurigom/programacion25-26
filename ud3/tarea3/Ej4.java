@@ -5,43 +5,60 @@ import java.util.Scanner;
 
 public class Ej4 {
 
-	public static void main(String[] args) {
-		// Juego: La cámara secreta. El jugador especifica el número de dígitos 
-		//de la clave secreta. La aplicación genera de forma aleatoria, 
-		//una combinación secreta de n dígitos del 1 al 5 
-		//(siendo n la longitud indicada anteriormente por el usuario).
-		//El jugador introduce ahora una combinación de prueba. 
-		//En cada intento se mostrará como pista, para cada dígito, 
-		//si es mayor menor o igual que el correspondiente de la combinación secreta.
-		
-		Scanner sc = new Scanner (System.in);
-		Random random = new Random();
-		Boolean acertada=false;
-		
-		int [] numeros;
-		
-		System.out.println("introduce el nº de dígitos de la clave secreta");
-		int digitos = sc.nextInt();
-		
-		numeros= new int[digitos];
-		
-		 for (int i = 0; i < numeros.length; i++) {
-	            numeros[i] = random.nextInt(numeros.length);  
-	        }
-		 
-		 do {
-			 
-			 System.out.println("introduce una combinación: ");
-			 String combinacion=sc.nextLine();
-			 char[] combi;
-			 combi= combinacion.toCharArray();
-			 
-			 
-			 
-			 
-		 }while(acertada!=false);
-		 
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Random random = new Random();
+        boolean acertada = false;
 
-	}
+        System.out.println("Introduce el nº de dígitos de la clave secreta:");
+        int digitos = Integer.parseInt(sc.nextLine());
 
+        int[] claveSecreta = new int[digitos];
+
+        
+        for (int i = 0; i < claveSecreta.length; i++) {
+            claveSecreta[i] = random.nextInt(5) + 1;
+        }
+
+       
+        do {
+            System.out.println("Introduce una combinación de " + digitos + " dígitos (del 1 al 5):");
+            String combi = sc.nextLine();
+
+            int[] combinacionJugador = new int[digitos];
+            for (int i = 0; i < digitos; i++) {
+                combinacionJugador[i] = combi.charAt(i) - '0';
+            }
+
+            StringBuilder pista = new StringBuilder();
+            int aciertos = 0;
+
+            for (int i = 0; i < digitos; i++) {
+                int clave = claveSecreta[i];
+                int intento = combinacionJugador[i];
+
+                if (intento == clave) {
+                    pista.append(" = ");
+                    aciertos++;
+                } else if (intento < clave) {
+                    pista.append(" > ");
+                } else {
+                    pista.append(" < ");
+                }
+            }
+
+            System.out.println("Pista:" + pista);
+
+            
+            if (aciertos == digitos) {
+                acertada = true;
+            }
+
+        } while (!acertada);
+
+       
+        System.out.println("¡¡¡correcto!!! la cámara se ha abierto");
+
+     
+    }
 }
