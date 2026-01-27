@@ -2,58 +2,39 @@ package ud4.tarea2.act2;
 
 public class PilaTabla {
 
-	private int[] pila = new int[5];
+private Integer[]Pila;
+private Integer cont;
+
+public PilaTabla() {
+
+	this.Pila = new Integer[5];
+	this.cont = 0;
+}
+
+public void apilar(Integer elemento) {
 	
-	private int elemento;
-	private int cont=0;
-
-	public PilaTabla() {
-
-		this.pila = pila;
-		this.elemento = elemento;
-	}
-
-	public int[] getPila() {
-		return pila;
-	}
-
-	public void setPila(int[] pila) {
-		this.pila = pila;
-	}
-
-	public int getElemento() {
-		return elemento;
-	}
-
-	public void setElemento(int elemento) {
-		this.elemento = elemento;
+	if (cont<Pila.length) {
+		Pila[cont]=elemento;
+		cont++;
+	}else {
+		System.out.println("La pila está llena");
 	}
 	
-	public void apilar(int elemento) {
-		
-		for (int i = 0; i <= cont; i++ ) {
-			
-				pila[cont]=elemento;
-		}
+}
 
-		cont++;	
-	}
-	
-	public void desapilar(int elemento) {
-		for (int i = 0; i < cont ; i++) {
-			if (pila[i]==elemento) {
-				pila[i]=0;
-			}			
-		}
+public void desapilar() {
+	if (cont==0) {
+		System.out.println("la pila ya está vacía");
+	}else {
 		cont--;
+		Pila[cont]=null;
 	}
-	
-	public void cima() {
-		for (int i = 0; i < 1; i++) {
-			if (pila[i]!=0) {
-				System.out.println(pila[i]);
-			}
-		}
-	}
+}
+
+public void cima() {
+	System.out.println("el elemento en la cima es: "+Pila[cont-1]);
+}
+
+
 	
 }
