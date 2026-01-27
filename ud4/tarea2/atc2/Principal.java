@@ -7,7 +7,7 @@ public class Principal {
 		
 		
 		pila1.apilar(1);
-		pila1.desapilar(1);
+		pila1.desapilar();
 		pila1.apilar(2);
 		pila1.cima();
 		pila1.apilar(3);
@@ -16,3 +16,4 @@ public class Principal {
 	}
 
 }
+
