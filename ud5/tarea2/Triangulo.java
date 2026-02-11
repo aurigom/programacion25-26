@@ -1,10 +1,10 @@
 package ud5.tarea2.act3;
 
-public class Triangulo extends PoligonoRegular {
+public class Triangulo extends PoligonoRegular implements Comparable<Triangulo>{
 
 	private double altura;
 	
-	public Triangulo(double lado, Color color, double altura) {
+	public Triangulo(double lado, String color, double altura) {
 		super(lado, color);
 		this.altura=altura;		
 	}
@@ -23,6 +23,12 @@ public class Triangulo extends PoligonoRegular {
 	@Override
 	public String toString() {
 		return "Triangulo [altura=" + altura + ", lado=" + lado + " color= "+color+"]";
+	}
+
+	@Override
+	public int compareTo(Triangulo o) {
+		
+		return this.lado < o.lado ? 1 : this.lado > o.lado ? -1 : 0;
 	}
 	
 	
