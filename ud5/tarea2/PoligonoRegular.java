@@ -3,12 +3,12 @@ package ud5.tarea2.act3;
 public abstract class PoligonoRegular implements figura {
 
 	protected double lado;
-	public Color color;
+	public String color;
 	private static int contadorPoligonos;
 	
 	
 	
-	public PoligonoRegular(double lado, Color color) {
+	public PoligonoRegular(double lado, String color) {
 		this.lado = lado;
 		this.color=color;
 		contadorPoligonos++;
@@ -16,7 +16,7 @@ public abstract class PoligonoRegular implements figura {
 
 	public PoligonoRegular() {
 		this.lado = 10; 
-		this.color = Color.AZUL;
+		this.color = color;
 		contadorPoligonos++; 
 		}
 
